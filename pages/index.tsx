@@ -9,19 +9,28 @@ export default function Home() {
   useEffect(() => {
     async function fetchMovies() {
       const data = await getMovies();
-      setMovies(data);
+      setMovies(data); 
     }
     fetchMovies();
   }, []);
+
+  const handleMovieClick = (movieId) => {
+    console.log('Movie clicked:', movieId);
+  };
 
   return (
     <div>
       <Navbar />
       <div className="container mx-auto p-4">
-        <h1 className="text-white text-3xl mb-6">Movies</h1>
+        <h1 className="text-white text-3xl mb-6">Top 100 Movies</h1>
         <div className="grid grid-cols-4 gap-4">
           {movies.map((movie) => (
-            <MovieCard key={movie.id} title={movie.title} image={movie.image} />
+            <MovieCard
+              key={movie.id} 
+              title={movie.title} 
+              image={movie.image}
+              onClick={() => handleMovieClick(movie.id)}
+            />
           ))}
         </div>
       </div>

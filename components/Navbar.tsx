@@ -8,7 +8,6 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      // Check if a token is present in localStorage
       const token = localStorage.getItem('token');
       setIsAuthenticated(!!token);
     }

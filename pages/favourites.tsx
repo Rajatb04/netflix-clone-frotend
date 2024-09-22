@@ -21,7 +21,7 @@ export default function Favourites() {
         <h1 className="text-white text-3xl mb-6">Favourites</h1>
         <div className="grid grid-cols-4 gap-4">
           {favourites.map((movie) => (
-            <MovieCard key={movie.id} title={movie.title} image={movie.image} />
+            <MovieCard key={movie.id} title={movie.title} image={movie.image} onClick={() => {}} />
           ))}
         </div>
       </div>
